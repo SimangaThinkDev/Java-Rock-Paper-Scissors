@@ -35,6 +35,8 @@ public class Game {
         options.put("Spock", spock);
 
         // Keep a copy of options as a list, Trust me
+        // So the reason i did this is because I initially wanted to index into the keySet()
+        // Tehn I just decided to move it to a list instead
         ArrayList<String> list = new ArrayList<>(options.keySet());
         
         // Display options to user
@@ -43,13 +45,17 @@ public class Game {
             System.out.printf("%d. %s\n", enumerate, option);
             enumerate++;
         }
+        // Collect user input (I minus one for indexing, kept it at plus for user)
         System.out.print(">> ");
         userChoice = scanner.nextInt() - 1;
         scanner.nextLine();
 
+        // Store the results as the actual vals
         String userResult = list.get(userChoice);
         String computerResult = list.get(computerChoice);
 
+        // For transparency show the user that you recorded what they chose and
+        // what the computer chose
         System.out.printf("User has chosen %s\n", userResult);
         System.out.printf("Computer has chosen %s\n", computerResult);
         
