@@ -52,29 +52,35 @@ public class Game {
 
         System.out.printf("User has chosen %s\n", userResult);
         System.out.printf("Computer has chosen %s\n", computerResult);
-        /*
-         * Make a decider, look into what the computer has and if it has what the player played, it's a loss
-         */
+        
+        // Implement game checker
+
+        // equal choices //
         if (userResult.equals(computerResult))
         {
             System.out.println("It is a Tie!");
         }
+        // Losing Choice for user //
         else if ( userResult.equals(options.get(computerResult)[0]) || userResult.equals(options.get(computerResult)[1]) ) {
             System.out.println("You Lose! ");
         }
+        // Winning choice for user //
         else {
             System.out.println("You Win!");
         }
 
+        // Ask the user if they want to continue
         System.out.print("Play Again: ");
         String playAgain = scanner.nextLine();
-
+        
+        // Use Recursion to allow the player to play again
         if (playAgain.toLowerCase().equals("yes")) {
             main(args);
         }else {
             System.out.println("Bye");
         }
 
+        // close the scanner
         scanner.close();
         
     }
