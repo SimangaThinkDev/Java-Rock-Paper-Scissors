@@ -47,6 +47,24 @@ public class Game {
         userChoice = scanner.nextInt() - 1;
         scanner.nextLine();
 
+        String userResult = list.get(userChoice);
+        String computerResult = list.get(computerChoice);
+
+        System.out.printf("User has chosen %s\n", userResult);
+        System.out.printf("Computer has chosen %s\n", computerResult);
+        /*
+         * Make a decider, look into what the computer has and if it has what the player played, it's a loss
+         */
+        if (userResult.equals(computerResult))
+        {
+            System.out.println("It is a Tie!");
+        }
+        else if ( userResult.equals(options.get(computerResult)[0]) || userResult.equals(options.get(computerResult)[1]) ) {
+            System.out.println("You Lose! ");
+        }
+        else {
+            System.out.println("You Win!");
+        }
 
         scanner.close();
         
