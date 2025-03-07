@@ -66,6 +66,15 @@ public class Game {
             System.out.println("You Win!");
         }
 
+        System.out.print("Play Again: ");
+        String playAgain = scanner.nextLine();
+
+        if (playAgain.toLowerCase().equals("yes")) {
+            main(args);
+        }else {
+            System.out.println("Bye");
+        }
+
         scanner.close();
         
     }
